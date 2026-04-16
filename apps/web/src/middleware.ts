@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { jwtVerify } from "jose";
 
 const COOKIE_NAME = "big5loop-session";
-const PUBLIC_PATHS = ["/login", "/api/auth/", "/api/health", "/api/chat", "/api/gateway/", "/api/feedback"];
+const PUBLIC_PATHS = ["/login", "/api/auth/", "/api/health", "/api/chat", "/api/gateway/", "/api/feedback", "/api/admin/"];
 
 const SECRET = new TextEncoder().encode(
   process.env.NEXTAUTH_SECRET || "big5loop-dev-secret-change-me"
