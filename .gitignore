@@ -48,15 +48,8 @@ Desktop.ini
 *.swo
 *~
 
-# Local documentation (default: not committed). Tracked exceptions:
-# - docs/phase5/ (index page)
-# - docs/reports/PHASE5-PANDORA-REPORT.md (ongoing Phase 5 report log)
-docs/*
-!docs/phase5/
-!docs/phase5/**
-!docs/reports/
-docs/reports/*
-!docs/reports/PHASE5-PANDORA-REPORT.md
+# Local documentation (not committed)
+docs/
 /scratch/
 /private/
 **/private-notes/

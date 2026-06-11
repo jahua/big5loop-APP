@@ -56,7 +56,6 @@ Big5Loop/
 ├── scripts/                # Deployment, RAG seeding, and job scripts
 ├── data/                   # Policy corpus sources and crawlers
 ├── evaluation_data/        # OCEAN evaluation datasets and analysis
-├── docs/                   # Architecture docs, runbooks, and reports
 └── visualization/          # Architecture diagrams and manuscript figures
 ```
 
@@ -106,7 +105,7 @@ npm run dev --workspace=web
 
 1. Open http://localhost:5678
 2. Import and activate `workflows/n8n/big5loop-phase1-2-postgres-mvp.json` (webhook: `big5loop-turn`)
-3. Optionally import `workflows/n8n/big5loop-turn-simple.json` for Simple mode — see [docs/TWO-WORKFLOWS-AND-MODE-SWITCH.md](docs/TWO-WORKFLOWS-AND-MODE-SWITCH.md)
+3. Optionally import `workflows/n8n/big5loop-turn-simple.json` for Simple mode
 
 ### 4. Install dependencies and typecheck
 
@@ -121,8 +120,6 @@ npm run test:parse --workspace=@big5loop/contracts
 ```bash
 npm run seed:policy   # requires DATABASE_URL to be set
 ```
-
-See [docs/POLICY-CORPUS-INGESTION.md](docs/POLICY-CORPUS-INGESTION.md) for full instructions.
 
 ---
 
@@ -158,7 +155,7 @@ All configuration is via environment variables. Copy `.env.example` and fill in 
 | `NEXTAUTH_SECRET` | Session signing secret |
 | `N8N_WEBHOOK_URL` | Base URL for N8N webhooks |
 
-See [docs/SECRETS-AND-CREDENTIALS.md](docs/SECRETS-AND-CREDENTIALS.md) for the full reference and production secret management guidance.
+See `.env.example` and `.env.production.example` for the full variable reference.
 
 ---
 
@@ -168,8 +165,7 @@ See [docs/SECRETS-AND-CREDENTIALS.md](docs/SECRETS-AND-CREDENTIALS.md) for the f
 - **Audit logs and feedback:** accessible via the Operations Dashboard in the UI
 - **Data export/delete:** `POST /api/data/export`, `POST /api/data/delete`
 - **Gateway entry point:** `POST /api/gateway/chat` (envelope with optional auth, rate limiting, and model tier routing)
-- **Monitoring and runbook:** [docs/OPERATIONS-RUNBOOK.md](docs/OPERATIONS-RUNBOOK.md)
-- **Pilot checklist:** [docs/PHASE4-PILOT-CHECKLIST.md](docs/PHASE4-PILOT-CHECKLIST.md)
+- **Operations dashboard:** audit logs, feedback, and health status in the UI
 
 ---
 
@@ -194,14 +190,8 @@ See [ROADMAP.md](ROADMAP.md) for detailed phase breakdowns and Definition of Don
 |---|---|
 | [Technical-Specification-RAG-Policy-Navigation.md](Technical-Specification-RAG-Policy-Navigation.md) | Full system specification (v1.5.0) |
 | [ROADMAP.md](ROADMAP.md) | Phased implementation plan |
-| [docs/GEMMA3-HYBRID-MEMORY.md](docs/GEMMA3-HYBRID-MEMORY.md) | Gemma 3 + hybrid memory integration guide |
-| [docs/SECRETS-AND-CREDENTIALS.md](docs/SECRETS-AND-CREDENTIALS.md) | Secrets and credential management |
-| [docs/OPERATIONS-RUNBOOK.md](docs/OPERATIONS-RUNBOOK.md) | Operations and monitoring runbook |
-| [docs/POLICY-CORPUS-INGESTION.md](docs/POLICY-CORPUS-INGESTION.md) | Policy corpus ingestion and RAG setup |
-| [docs/reports/](docs/reports/) | Phase completion reports |
 | [evaluation_data/PHASE5-SPECIFICATION.md](evaluation_data/PHASE5-SPECIFICATION.md) | Phase 5: layout, data transforms, workflow name/version, tests |
 | [evaluation_data/PHASE5-PANDORA.md](evaluation_data/PHASE5-PANDORA.md) | Phase 5: short overview (links to spec) |
-| [docs/phase5/README.md](docs/phase5/README.md) | Phase 5: docs index (links to spec; tracked under `docs/` exception) |
 
 ---
 
